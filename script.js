@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. Dark / Light Theme Toggle
+  // 2. Dark / Light Theme Toggle (Defaults to Dark Futuristic Theme)
   // --------------------------------------------------------------------------
   const themeToggle = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('siddharth-theme');
   if (savedTheme) {
     htmlElement.setAttribute('data-theme', savedTheme);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    htmlElement.setAttribute('data-theme', 'light');
+  } else {
+    htmlElement.setAttribute('data-theme', 'dark');
   }
 
   if (themeToggle) {
@@ -656,6 +656,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return `That's a great question! Siddharth is a Startup Founder (GoDuet) and AI Engineer specialized in autonomous systems, voice intelligence, and scalable full-stack products. Feel free to explore the Projects or send a note via the contact form!`;
   }
 
+  function formatBotResponse(rawText) {
+    return rawText
+      .replace(/(GoDuet)/g, '<strong>$1</strong>')
+      .replace(/(VOICEPRINT)/g, '<strong>$1</strong>')
+      .replace(/(Private Wellness Check-In)/g, '<strong>$1</strong>')
+      .replace(/(CampusFlow)/g, '<strong>$1</strong>')
+      .replace(/(80%|sub-300ms)/g, '<strong>$1</strong>')
+      .replace(/(siddharth@example\.com)/g, '<strong>$1</strong>');
+  }
+
   function appendChatMessage(sender, text) {
     if (!aiChatMessages) return;
     const msgDiv = document.createElement('div');
@@ -670,19 +680,21 @@ document.addEventListener('DOMContentLoaded', () => {
       aiChatMessages.appendChild(msgDiv);
       aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
     } else {
-      bubble.innerHTML = '';
+      bubble.textContent = '';
       msgDiv.appendChild(bubble);
       aiChatMessages.appendChild(msgDiv);
 
       let i = 0;
-      const typeSpeed = 15;
+      const typeSpeed = 12;
       const interval = setInterval(() => {
         if (i < text.length) {
-          bubble.innerHTML = text.substring(0, i + 1);
+          bubble.textContent = text.substring(0, i + 1);
           aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
           i++;
         } else {
           clearInterval(interval);
+          bubble.innerHTML = formatBotResponse(text);
+          aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
         }
       }, typeSpeed);
     }
