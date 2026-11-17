@@ -1,111 +1,104 @@
-# Single-Page Developer & AI Engineer Portfolio
+# Siddharth Singh — Premium Futuristic Personal Portfolio
 
-A modern, high-performance static single-page portfolio website crafted using semantic **HTML5**, modern **CSS3**, and minimal vanilla JavaScript.
+A world-class, futuristic, interactive personal portfolio website for **Siddharth Singh** — Startup Founder, AI & Technology Enthusiast, Product Builder, Entrepreneur, and Student Developer.
 
----
-
-## 🌟 Features
-
-- **Single-Page Architecture**: Seamless, responsive navigation with smooth scroll behavior.
-- **Modern CSS Styling**:
-  - CSS custom properties (variables) for effortless theming.
-  - Dark Mode & Light Mode support (defaults to sleek dark theme with instant toggle).
-  - Glassmorphic card styling, gradient accents, and subtle glow effects.
-  - Fully responsive layout across mobile, tablet, and desktop viewports.
-- **Sections Included**:
-  1. **Header / Navbar**: Sticky glassmorphic bar with logo, nav links, theme toggle, and mobile menu drawer.
-  2. **Hero Section**: Bio, status indicator, action buttons, social links, and an interactive code card.
-  3. **About Me**: Core background, specializations, and engineering highlights.
-  4. **Skills & Tech Stack**: Categorized tech stack grid (AI/ML, Frontend, Backend, DevOps).
-  5. **Featured Projects**: Project cards with interactive filter pills (All, AI & ML, Full Stack, Tools).
-  6. **Experience & Education**: Clean vertical milestone timeline.
-  7. **Contact Section**: Interactive contact form with validation, direct contact cards, and a one-click "Copy Email" button.
-  8. **Footer**: Social links, navigation shortcuts, and back-to-top button.
-- **Zero Heavy Dependencies**: Pure HTML & CSS (no heavy node_modules or build steps required).
+Crafted with high-performance semantic **HTML5**, modern **CSS3** design tokens, and lightweight **vanilla JavaScript**.
 
 ---
 
-## 🌐 Making It Available for Everyone (Public Deployment)
-
-### 1. GitHub Pages (Free Worldwide Hosting)
-Your local repository is already initialized on the `main` branch. To publish it live under `https://siddhu31230-dot.github.io/portfolio/`:
-
-1. Create a public repository on your GitHub account:
-   ```bash
-   gh repo create portfolio --public --source=. --remote=origin --push
-   ```
-2. Enable GitHub Pages on the `main` branch:
-   ```bash
-   gh api -X POST repos/siddhu31230-dot/portfolio/pages -f source='{"branch":"main","path":"/"}'
-   ```
-3. Your site will be live worldwide at:
-   `https://siddhu31230-dot.github.io/portfolio/`
+## ⚡ Design & Aesthetic
+- **Color Palette**: Futuristic dark obsidian (`#08090b` / `#0e1218`) with vibrant **Electric Neon Green** (`#00FF87`) and complementary cyber cyan (`#00F0FF`).
+- **Typography**: 
+  - Headings: `Space Grotesk` (clean, geometric, futuristic)
+  - Body: `Inter` (optimal legibility and elegance)
+  - Code & Badges: `JetBrains Mono` (terminal aesthetic)
+- **Visuals**:
+  - Interactive 3D WebGL hero visual (Three.js wireframe icosahedron with glowing particles & mouse tracking).
+  - Custom desktop cursor with magnetic trailing ring.
+  - Glassmorphic card surfaces with subtle backdrop blur and neon edge shine.
+  - Responsive across Mobile, Tablet, and Desktop.
 
 ---
 
-### 2. Netlify Drop (Instant 10-Second Drag & Drop)
-If you prefer not to use the command line:
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop this folder (`S&AI`) into the upload area.
-3. You will receive an instant, free `https://your-site.netlify.app` public link available worldwide.
+## 🚀 Website Sections (11 Core Sections)
+
+1. **Hero**: 
+   - Identity badges (`Startup Founder`, `AI & Tech Enthusiast`, `Product Builder`, `Entrepreneur`, `Student Developer`).
+   - High-impact glitch title, action CTAs, social links, and real engineering statistics counter.
+   - Interactive 3D Canvas visual with real-time mouse orbit.
+2. **About Me**:
+   - Personal journey bridging frontier AI and venture creation.
+   - Four pillars: Startup Founder, AI & Tech Enthusiast, Product Builder, Student Developer.
+3. **Startups (GoDuet Spotlight)**:
+   - Deep dive into **GoDuet** — Siddharth's campus food delivery startup.
+   - The campus friction, batched route clustering solution, merchant portal, and simulated live app mockup.
+4. **Featured Projects**:
+   - Interactive category filtering (`All`, `Startups`, `AI & Speech`, `Full-Stack`, `Robotics & Concepts`).
+   - Clearly categorized stages:
+     - **GoDuet** — `[STARTUP · ACTIVE]`
+     - **VOICEPRINT** — `[PROTOTYPE · AI]` (Sub-300ms neural voice assistant)
+     - **Private Wellness Check-In** — `[COMPLETED · PRODUCTION]` (Zero-knowledge hostel health)
+     - **CampusFlow** — `[CONCEPT · ROBOTICS & IOT]` (Autonomous campus delivery rover)
+   - Interactive case study modal for architectural deep-dives.
+5. **AI & Technology Lab**:
+   - Interactive AI reasoning pipeline flow diagram.
+   - Real-time token streaming inference simulator with prompt presets.
+   - Deep-dive into Neural Speech, Autonomous Agent Workflows, and Vector RAG.
+6. **Skills Grid**:
+   - 6 comprehensive categories: Programming Languages, Frontend Engineering, Backend & Cloud, Databases & Vector Stores, AI/ML & Robotics, and Business & Startup Leadership.
+7. **The Journey**:
+   - Interactive vertical timeline tracing milestones from first lines of code in 2021 to founding GoDuet and pushing voice AI.
+8. **Experience & Leadership**:
+   - Startup Founder at GoDuet, AI Research Lab Developer, and Computer Science & Engineering undergraduate training.
+9. **Achievements & Honors**:
+   - Verified hackathon podiums, venture incubation selections, and AI certifications (zero fake statistics).
+10. **Contact**:
+    - Direct email with 1-click clipboard copy (`siddharth@example.com`).
+    - Validated interactive contact form with real-time field checking and transmission feedback.
+11. **Resume & PDF Download**:
+    - Interactive high-resolution executive resume preview modal.
+    - 1-click printable / downloadable PDF trigger formatted with print stylesheets.
 
 ---
 
-### 3. Local Network Access (Phones, Tablets & Wi-Fi Devices)
-The portfolio is currently live on your local network:
-- **On this computer**: [http://localhost:8085](http://localhost:8085)
-- **On your phone / other devices on the same Wi-Fi**: `http://172.16.1.89:8085`
+## 🤖 Advanced Features
+
+- **"Ask Siddharth" AI Assistant**:
+  - Interactive floating chatbot widget in the bottom-right corner.
+  - Pre-trained knowledge base answering questions about GoDuet, VOICEPRINT, Private Wellness Check-In, CampusFlow, tech stack, and contact methods.
+  - Natural typing stream effect and quick prompt suggestion chips.
+- **GitHub Repository Showcase**:
+  - Repository cards for `goduet-core`, `voiceprint-ai`, and `private-wellness` with simulated stars, forks, and language badges.
+- **Dark / Light Mode**:
+  - Seamless theme toggle persisted across sessions via `localStorage`.
+- **Full WCAG Accessibility**:
+  - Keyboard navigation with `:focus-visible` cyber focus rings.
+  - Skip to main content link.
+  - `prefers-reduced-motion` compliance.
 
 ---
 
-## ♿ Universal Accessibility (Available for All Users)
+## 🌐 Running Locally
 
-The website has been built following WCAG 2.1 accessibility guidelines:
-- **Keyboard Navigation**: Full `:focus-visible` outline rings for keyboard-only visitors.
-- **Skip to Content**: Hidden jump link at the top of the DOM for screen readers and tab navigation.
-- **Reduced Motion**: Respects `@media (prefers-reduced-motion: reduce)` for users with vestibular or motion sensitivities.
-- **Contrast Adaptation**: Meets WCAG AA text contrast thresholds with `@media (prefers-contrast: more)` support.
-- **Screen Reader Support**: Semantic HTML5 elements (`<header>`, `<main>`, `<nav>`, `<article>`, `<footer>`) with explicit `aria-label` and `aria-expanded` attributes.
-
----
-
-## 🚀 Quick Start / How to Run
-
-### Method 1: Open Directly in Browser
-You can open `index.html` directly in any web browser:
-- On macOS: double-click `index.html` or run:
-  ```bash
-  open index.html
-  ```
-
-### Method 2: Local HTTP Server (Python)
-If you prefer running a local server:
+### Option 1: Open in Browser
+Double-click `index.html` or run:
 ```bash
-python3 -m http.server 8000
+open index.html
 ```
-Then visit: [http://localhost:8000](http://localhost:8000)
+
+### Option 2: Local HTTP Server (Python)
+```bash
+python3 -m http.server 8085
+```
+Then visit: `http://localhost:8085`
 
 ---
 
-## 📂 File Structure
-
+## 📁 File Structure
 ```
 S&AI/
-├── index.html     # Semantic single-page HTML structure
-├── style.css      # Modern responsive styling, variables, and dark/light modes
-├── script.js      # Vanilla JS for theme toggle, filtering, and form feedback
-└── README.md      # Project overview and instructions
+├── index.html       # Complete semantic structure, SEO meta tags, and schema
+├── style.css        # Futuristic obsidian & electric green design system
+├── script.js        # 3D canvas, AI assistant, filter, and interaction engine
+└── README.md        # Documentation and deployment guide
 ```
-
----
-
-## ✏️ How to Customize
-
-1. **Personal Information**:
-   - Open `index.html` and search for `Siddharth Singh` or `siddharth@example.com` to replace with your name, title, and contact details.
-2. **Social Media Links**:
-   - Update the `href` attributes in the `.hero-socials` and `.social-pills` blocks (GitHub, LinkedIn, Twitter/X, Email).
-3. **Projects**:
-   - Edit or duplicate the `<article class="project-card">` elements under `#projects` to showcase your own work.
-4. **Color Palette**:
-   - In `style.css`, modify `:root` variables (`--primary`, `--accent-cyan`, `--bg-base`, etc.) to match your personal brand.
