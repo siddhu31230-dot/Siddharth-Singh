@@ -47,7 +47,7 @@ Crafted with high-performance semantic **HTML5**, modern **CSS3** design tokens,
 6. **Skills Grid**:
    - 6 comprehensive categories: Programming Languages, Frontend Engineering, Backend & Cloud, Databases & Vector Stores, AI/ML & Robotics, and Business & Startup Leadership.
 7. **The Journey**:
-   - Interactive vertical timeline tracing milestones from first lines of code in 2021 to founding GoDuet and pushing voice AI.
+   - Interactive vertical timeline tracing milestones from early self-taught programming in 2024 to starting B.Tech in Computer Science in 2026 and founding GoDuet.
 8. **Experience & Leadership**:
    - Startup Founder at GoDuet, AI Research Lab Developer, and Computer Science & Engineering undergraduate training.
 9. **Achievements & Honors**:
