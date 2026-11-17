@@ -47,11 +47,11 @@ Crafted with high-performance semantic **HTML5**, modern **CSS3** design tokens,
 6. **Skills Grid**:
    - 6 comprehensive categories: Programming Languages, Frontend Engineering, Backend & Cloud, Databases & Vector Stores, AI/ML & Robotics, and Business & Startup Leadership.
 7. **The Journey**:
-   - Interactive vertical timeline tracing milestones from early self-taught programming in 2024 to starting B.Tech in Computer Science in 2026 and founding GoDuet.
+   - Interactive vertical timeline tracing milestones from starting B.Tech at Newton School of Technology in 2026, advancing through full-stack hackathon sprints, to founding GoDuet and building AI systems.
 8. **Experience & Leadership**:
-   - Startup Founder at GoDuet, AI Research Lab Developer, and Computer Science & Engineering undergraduate training.
+   - Startup Founder at GoDuet, AI & Full Stack Software Developer (Independent AI Lab, started in 2026), and B.Tech in CSE at Newton School of Technology (01st semester).
 9. **Achievements & Honors**:
-   - Verified hackathon podiums, venture incubation selections, and AI certifications (zero fake statistics).
+   - Hackathon participant and sprint builder, GoDuet venture recognition, and ongoing foundational training in Deep Learning & AI Systems (strictly verified, zero fabricated claims).
 10. **Contact**:
     - Direct email with 1-click clipboard copy (`siddharth@example.com`).
     - Validated interactive contact form with real-time field checking and transmission feedback.

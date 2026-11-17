@@ -641,8 +641,16 @@ document.addEventListener('DOMContentLoaded', () => {
       answer: "You can email Siddharth at siddharth@example.com, check out his code at github.com/siddhu31230-dot, or send a note via the Contact section below!"
     },
     {
+      keywords: ['education', 'college', 'university', 'newton', 'semester', 'degree', 'study', 'school'],
+      answer: "Siddharth is currently a 01st semester B.Tech Computer Science & Engineering student at Newton School of Technology (started in 2026). He combines academic CS rigor with hands-on venture execution at GoDuet."
+    },
+    {
+      keywords: ['hackathon', 'hackathons', 'awards', 'achievements', 'sprint'],
+      answer: "Siddharth is an active hackathon participant and sprint builder, collaborating in collegiate tech sprints to ship functional apps under pressure. He is also currently undergoing foundational training in Deep Learning & AI Systems."
+    },
+    {
       keywords: ['who', 'siddharth', 'background', 'about'],
-      answer: "Siddharth Singh is a Startup Founder (GoDuet), AI & Technology Enthusiast, Product Builder, Entrepreneur, and Student Developer. He bridges frontier AI systems with real-world startup ventures."
+      answer: "Siddharth Singh is a 01st semester student at Newton School of Technology (started UG in 2026), Startup Founder (GoDuet), AI & Technology Enthusiast, Product Builder, and Full Stack Developer."
     }
   ];
 
@@ -653,13 +661,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return item.answer;
       }
     }
-    return `That's a great question! Siddharth is a Startup Founder (GoDuet) and AI Engineer specialized in autonomous systems, voice intelligence, and scalable full-stack products. Feel free to explore the Projects or send a note via the contact form!`;
+    return `That's a great question! Siddharth is a 01st semester student at Newton School of Technology, Startup Founder (GoDuet), and AI product builder. Feel free to explore the Projects or send a note via the contact form!`;
   }
 
   function formatBotResponse(rawText) {
     return rawText
       .replace(/(GoDuet)/g, '<strong>$1</strong>')
       .replace(/(VOICEPRINT)/g, '<strong>$1</strong>')
+      .replace(/(Newton School of Technology)/g, '<strong>$1</strong>')
       .replace(/(Private Wellness Check-In)/g, '<strong>$1</strong>')
       .replace(/(CampusFlow)/g, '<strong>$1</strong>')
       .replace(/(80%|sub-300ms)/g, '<strong>$1</strong>')
