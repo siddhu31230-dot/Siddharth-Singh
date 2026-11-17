@@ -67,19 +67,15 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Three.js CDN for 3D Hero Visual (with graceful canvas fallback) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+  <!-- Pure HTML & CSS State Controls (Zero JavaScript) -->
+  <input type="checkbox" id="theme-switch" class="theme-switch-control" aria-label="Toggle dark and light theme" />
+  <input type="checkbox" id="mobile-nav-toggle" class="mobile-toggle-control" aria-label="Toggle mobile navigation menu" />
+  <input type="checkbox" id="ai-chat-toggle" class="ai-toggle-control" aria-label="Toggle Ask Siddharth AI Assistant" />
+
   <!-- Accessible Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
-  <!-- Custom Futuristic Cursor (Desktop only) -->
-  <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-  </div>
 
   <!-- Ambient Cyber Lighting & Background Canvas Grid -->
   <div class="cyber-glow-bg cyber-glow-primary"></div>
@@ -112,20 +108,20 @@
 
       <!-- Navigation Actions -->
       <div class="nav-actions">
-        <!-- AI Assistant Trigger Button -->
-        <button id="nav-ask-ai-btn" class="cyber-btn cyber-btn-xs" aria-label="Open AI Assistant" title="Ask Siddharth AI">
+        <!-- AI Assistant Trigger Label -->
+        <label for="ai-chat-toggle" class="cyber-btn cyber-btn-xs nav-ask-btn" aria-label="Open AI Assistant" title="Ask Siddharth AI">
           <span class="pulse-sparkle">✦</span>
           <span>Ask AI</span>
-        </button>
+        </label>
 
-        <!-- Resume Modal Trigger -->
-        <button id="nav-resume-btn" class="cyber-btn cyber-btn-ghost cyber-btn-xs" aria-label="View Resume">
+        <!-- Resume Modal Link -->
+        <a href="#resume-modal" class="cyber-btn cyber-btn-ghost cyber-btn-xs" aria-label="View Resume">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           <span>Resume</span>
-        </button>
+        </a>
 
-        <!-- Theme Toggle (Dark / Light) -->
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <!-- Pure CSS Theme Toggle (Dark / Light) -->
+        <label for="theme-switch" class="icon-btn theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
           <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -140,18 +136,19 @@
           <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-        </button>
+        </label>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-toggle" class="icon-btn mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+        <!-- Mobile Menu Toggle Label -->
+        <label for="mobile-nav-toggle" class="icon-btn mobile-menu-btn" aria-label="Open navigation menu">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
-        </button>
+        </label>
       </div>
     </div>
 
-    <!-- Mobile Drawer Menu -->
+    <!-- Mobile Drawer Menu & Backdrop -->
+    <label for="mobile-nav-toggle" class="mobile-nav-backdrop" aria-hidden="true"></label>
     <div id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation">
       <ul class="mobile-nav-links">
         <li><a href="#about" class="mobile-nav-link">About</a></li>
@@ -165,12 +162,12 @@
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
       </ul>
       <div class="mobile-nav-actions">
-        <button id="mobile-ask-ai-btn" class="cyber-btn cyber-btn-primary full-width">
+        <label for="ai-chat-toggle" class="cyber-btn cyber-btn-primary full-width">
           <span>Ask Siddharth AI</span>
-        </button>
-        <button id="mobile-resume-btn" class="cyber-btn cyber-btn-outline full-width">
+        </label>
+        <a href="#resume-modal" class="cyber-btn cyber-btn-outline full-width">
           <span>View Resume</span>
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -232,10 +229,10 @@
             <a href="#projects" class="cyber-btn cyber-btn-outline">
               <span>View Projects</span>
             </a>
-            <button id="hero-resume-trigger" class="cyber-btn cyber-btn-ghost">
+            <a href="#resume-modal" class="cyber-btn cyber-btn-ghost" aria-label="View Resume">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               <span>Resume</span>
-            </button>
+            </a>
           </div>
 
           <!-- Social Links Strip -->
@@ -258,15 +255,46 @@
           </div>
         </div>
 
-        <!-- 3D Interactive Hero Visual / Canvas Container -->
+        <!-- 3D Interactive Hero Visual (Pure CSS 3D Holographic Engine) -->
         <div class="hero-visual-wrapper">
           <div class="hero-3d-card">
-            <!-- 3D Canvas Element -->
-            <div id="hero-3d-canvas-container" class="canvas-3d-box" title="Interactive 3D Core - Move your mouse to interact">
-              <canvas id="hero-3d-canvas"></canvas>
+            <!-- Pure CSS 3D Scene -->
+            <div id="hero-3d-canvas-container" class="canvas-3d-box" title="Pure CSS 3D Holographic Core · Hover to accelerate spin">
+              <div class="css-3d-scene">
+                <div class="css-3d-polytope">
+                  <!-- 3D Gyroscope Outer Ring 1 -->
+                  <div class="poly-ring ring-1"></div>
+                  <!-- 3D Gyroscope Middle Ring 2 -->
+                  <div class="poly-ring ring-2"></div>
+                  <!-- 3D Gyroscope Inner Ring 3 -->
+                  <div class="poly-ring ring-3"></div>
+
+                  <!-- 3D Polyhedron Wireframe Planes -->
+                  <div class="poly-lattice">
+                    <div class="lattice-plane p1"></div>
+                    <div class="lattice-plane p2"></div>
+                    <div class="lattice-plane p3"></div>
+                    <div class="lattice-plane p4"></div>
+                  </div>
+
+                  <!-- Pulsating Quantum Plasma Core -->
+                  <div class="poly-core">
+                    <div class="core-sparkle"></div>
+                  </div>
+
+                  <!-- Orbiting 3D Nodes -->
+                  <div class="orbit-node node-1"></div>
+                  <div class="orbit-node node-2"></div>
+                  <div class="orbit-node node-3"></div>
+                  <div class="orbit-node node-4"></div>
+                </div>
+                <!-- 3D Matrix Floor Grid -->
+                <div class="css-3d-floor"></div>
+              </div>
+
               <div class="canvas-hint-overlay">
                 <span class="hint-icon">✦</span>
-                <span class="hint-text">Interactive 3D Engine · Drag / Hover to Orbit</span>
+                <span class="hint-text">Pure CSS 3D Engine · 60 FPS GPU Accelerated</span>
               </div>
             </div>
 
@@ -584,222 +612,233 @@
           </p>
         </div>
 
-        <!-- Interactive Category Filters -->
-        <div class="project-filters" role="tablist" aria-label="Project category filters">
-          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
-            <span>All Projects</span>
-            <span class="filter-counter">4</span>
-          </button>
-          <button class="filter-tab" data-filter="startup" role="tab" aria-selected="false">
-            <span>Startups</span>
-            <span class="filter-counter">1</span>
-          </button>
-          <button class="filter-tab" data-filter="ai" role="tab" aria-selected="false">
-            <span>AI &amp; Speech</span>
-            <span class="filter-counter">1</span>
-          </button>
-          <button class="filter-tab" data-filter="fullstack" role="tab" aria-selected="false">
-            <span>Full-Stack</span>
-            <span class="filter-counter">2</span>
-          </button>
-          <button class="filter-tab" data-filter="robotics" role="tab" aria-selected="false">
-            <span>Robotics &amp; Concepts</span>
-            <span class="filter-counter">1</span>
-          </button>
-        </div>
+        <!-- Pure CSS Interactive Category Filters Wrapper -->
+        <div class="projects-filter-wrapper">
+          <input type="radio" name="proj-filter" id="filter-all" class="filter-radio" checked />
+          <input type="radio" name="proj-filter" id="filter-startup" class="filter-radio" />
+          <input type="radio" name="proj-filter" id="filter-ai" class="filter-radio" />
+          <input type="radio" name="proj-filter" id="filter-fullstack" class="filter-radio" />
+          <input type="radio" name="proj-filter" id="filter-robotics" class="filter-radio" />
 
-        <!-- Projects Grid -->
-        <div class="projects-grid">
-          <!-- 1. GoDuet (Startup / Active) -->
-          <article class="project-card cyber-card" data-category="startup fullstack" data-project-id="goduet">
-            <div class="card-inner">
-              <div class="project-preview-box">
-                <div class="preview-glow"></div>
-                <div class="project-stage-badge stage-startup">
-                  <span class="stage-dot"></span> STARTUP · ACTIVE
-                </div>
-                <div class="preview-mockup-graphic startup-graphic">
-                  <div class="mock-delivery-bike">🛵</div>
-                  <div class="mock-graphic-title">GoDuet Campus Logistics</div>
-                  <div class="mock-graphic-tag">Peer-to-Peer Order Pooling</div>
-                </div>
-              </div>
+          <!-- Filter Tab Labels -->
+          <div class="project-filters" role="tablist" aria-label="Project category filters">
+            <label for="filter-all" class="filter-tab">
+              <span>All Projects</span>
+              <span class="filter-counter">4</span>
+            </label>
+            <label for="filter-startup" class="filter-tab">
+              <span>Startups</span>
+              <span class="filter-counter">1</span>
+            </label>
+            <label for="filter-ai" class="filter-tab">
+              <span>AI &amp; Speech</span>
+              <span class="filter-counter">1</span>
+            </label>
+            <label for="filter-fullstack" class="filter-tab">
+              <span>Full-Stack</span>
+              <span class="filter-counter">2</span>
+            </label>
+            <label for="filter-robotics" class="filter-tab">
+              <span>Robotics &amp; Concepts</span>
+              <span class="filter-counter">1</span>
+            </label>
+          </div>
 
-              <div class="project-details-box">
-                <div class="project-meta-top">
-                  <span class="proj-category">Venture / Marketplace</span>
-                  <span class="proj-year">2026 – Present</span>
-                </div>
-                <h3 class="project-heading">GoDuet – Food Delivery Startup</h3>
-                <p class="project-description">
-                  Hyper-local campus food delivery platform designed for collegiate dormitory density. Solves high fees and gate drop-off friction through intelligent batching and student courier networks.
-                </p>
-
-                <div class="project-tech-tags">
-                  <span class="tech-pill">Next.js</span>
-                  <span class="tech-pill">Node.js</span>
-                  <span class="tech-pill">PostgreSQL</span>
-                  <span class="tech-pill">WebSockets</span>
-                  <span class="tech-pill">Redis</span>
-                </div>
-
-                <div class="project-actions-row">
-                  <button class="cyber-link-btn project-detail-btn" data-project-id="goduet">
-                    <span>Deep Dive Case Study</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </button>
-                  <a href="#contact" class="cyber-icon-link" title="Contact Founder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. VOICEPRINT (Prototype / AI) -->
-          <article class="project-card cyber-card" data-category="ai" data-project-id="voiceprint">
-            <div class="card-inner">
-              <div class="project-preview-box">
-                <div class="preview-glow"></div>
-                <div class="project-stage-badge stage-prototype">
-                  <span class="stage-dot"></span> PROTOTYPE · AI
-                </div>
-                <div class="preview-mockup-graphic voice-graphic">
-                  <div class="audio-wave-visual">
-                    <span class="wave-bar wb-1"></span>
-                    <span class="wave-bar wb-2"></span>
-                    <span class="wave-bar wb-3"></span>
-                    <span class="wave-bar wb-4"></span>
-                    <span class="wave-bar wb-5"></span>
-                    <span class="wave-bar wb-6"></span>
-                    <span class="wave-bar wb-7"></span>
+          <!-- Projects Grid -->
+          <div class="projects-grid">
+            <!-- 1. GoDuet (Startup / Active) -->
+            <article class="project-card cyber-card" data-category="startup fullstack" data-project-id="goduet">
+              <div class="card-inner">
+                <div class="project-preview-box">
+                  <div class="preview-glow"></div>
+                  <div class="project-stage-badge stage-startup">
+                    <span class="stage-dot"></span> STARTUP · ACTIVE
                   </div>
-                  <div class="mock-graphic-title">VOICEPRINT Neural Assistant</div>
-                  <div class="mock-graphic-tag">Sub-300ms Speech Synthesis &amp; Verification</div>
+                  <div class="preview-mockup-graphic startup-graphic">
+                    <div class="mock-delivery-bike">🛵</div>
+                    <div class="mock-graphic-title">GoDuet Campus Logistics</div>
+                    <div class="mock-graphic-tag">Peer-to-Peer Order Pooling</div>
+                  </div>
+                </div>
+
+                <div class="project-details-box">
+                  <div class="project-meta-top">
+                    <span class="proj-category">Venture / Marketplace</span>
+                    <span class="proj-year">2026 – Present</span>
+                  </div>
+                  <h3 class="project-heading">GoDuet – Food Delivery Startup</h3>
+                  <p class="project-description">
+                    Hyper-local campus food delivery platform designed for collegiate dormitory density. Solves high fees and gate drop-off friction through intelligent batching and student courier networks.
+                  </p>
+
+                  <div class="project-tech-tags">
+                    <span class="tech-pill">Next.js</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">WebSockets</span>
+                    <span class="tech-pill">Redis</span>
+                  </div>
+
+                  <div class="project-actions-row">
+                    <a href="#modal-goduet" class="cyber-link-btn">
+                      <span>Deep Dive Case Study</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="#contact" class="cyber-icon-link" title="Contact Founder">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
+            </article>
 
-              <div class="project-details-box">
-                <div class="project-meta-top">
-                  <span class="proj-category">AI / Voice Intelligence</span>
-                  <span class="proj-year">2026</span>
+            <!-- 2. VOICEPRINT (Prototype / AI) -->
+            <article class="project-card cyber-card" data-category="ai" data-project-id="voiceprint">
+              <div class="card-inner">
+                <div class="project-preview-box">
+                  <div class="preview-glow"></div>
+                  <div class="project-stage-badge stage-prototype">
+                    <span class="stage-dot"></span> PROTOTYPE · AI
+                  </div>
+                  <div class="preview-mockup-graphic voice-graphic">
+                    <div class="audio-wave-visual">
+                      <span class="wave-bar wb-1"></span>
+                      <span class="wave-bar wb-2"></span>
+                      <span class="wave-bar wb-3"></span>
+                      <span class="wave-bar wb-4"></span>
+                      <span class="wave-bar wb-5"></span>
+                      <span class="wave-bar wb-6"></span>
+                      <span class="wave-bar wb-7"></span>
+                    </div>
+                    <div class="mock-graphic-title">VOICEPRINT Neural Assistant</div>
+                    <div class="mock-graphic-tag">Sub-300ms Speech Synthesis &amp; Verification</div>
+                  </div>
                 </div>
-                <h3 class="project-heading">VOICEPRINT – AI Voice Assistant</h3>
-                <p class="project-description">
-                  Next-generation conversational voice agent with speaker acoustic biometric verification, streaming transcription, low-latency neural TTS synthesis, and autonomous tool calling.
-                </p>
 
-                <div class="project-tech-tags">
-                  <span class="tech-pill">Python</span>
-                  <span class="tech-pill">PyTorch</span>
-                  <span class="tech-pill">Whisper</span>
-                  <span class="tech-pill">FastAPI</span>
-                  <span class="tech-pill">LangChain</span>
-                </div>
+                <div class="project-details-box">
+                  <div class="project-meta-top">
+                    <span class="proj-category">AI / Voice Intelligence</span>
+                    <span class="proj-year">2026</span>
+                  </div>
+                  <h3 class="project-heading">VOICEPRINT – AI Voice Assistant</h3>
+                  <p class="project-description">
+                    Next-generation conversational voice agent with speaker acoustic biometric verification, streaming transcription, low-latency neural TTS synthesis, and autonomous tool calling.
+                  </p>
 
-                <div class="project-actions-row">
-                  <button class="cyber-link-btn project-detail-btn" data-project-id="voiceprint">
-                    <span>View Architecture</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </button>
-                  <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="GitHub Repository">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </a>
+                  <div class="project-tech-tags">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">PyTorch</span>
+                    <span class="tech-pill">Whisper</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">LangChain</span>
+                  </div>
+
+                  <div class="project-actions-row">
+                    <a href="#modal-voiceprint" class="cyber-link-btn">
+                      <span>View Architecture</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="GitHub Repository">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- 3. Private Wellness Check-In (Completed / Full-Stack) -->
-          <article class="project-card cyber-card" data-category="fullstack" data-project-id="wellness">
-            <div class="card-inner">
-              <div class="project-preview-box">
-                <div class="preview-glow"></div>
-                <div class="project-stage-badge stage-completed">
-                  <span class="stage-dot"></span> COMPLETED · PRODUCTION
+            <!-- 3. Private Wellness Check-In (Completed / Full-Stack) -->
+            <article class="project-card cyber-card" data-category="fullstack" data-project-id="wellness">
+              <div class="card-inner">
+                <div class="project-preview-box">
+                  <div class="preview-glow"></div>
+                  <div class="project-stage-badge stage-completed">
+                    <span class="stage-dot"></span> COMPLETED · PRODUCTION
+                  </div>
+                  <div class="preview-mockup-graphic security-graphic">
+                    <div class="shield-icon">🛡️</div>
+                    <div class="mock-graphic-title">Private Wellness Check-In</div>
+                    <div class="mock-graphic-tag">Zero-Knowledge Student Mental Health</div>
+                  </div>
                 </div>
-                <div class="preview-mockup-graphic security-graphic">
-                  <div class="shield-icon">🛡️</div>
-                  <div class="mock-graphic-title">Private Wellness Check-In</div>
-                  <div class="mock-graphic-tag">Zero-Knowledge Student Mental Health</div>
+
+                <div class="project-details-box">
+                  <div class="project-meta-top">
+                    <span class="proj-category">Cybersecurity / Healthcare</span>
+                    <span class="proj-year">2026</span>
+                  </div>
+                  <h3 class="project-heading">Private Wellness Check-In</h3>
+                  <p class="project-description">
+                    A cryptographic privacy-first hostel wellness check-in system. Allows collegiate residents to log health indicators and request medical or counselor assistance with mathematically guaranteed anonymity.
+                  </p>
+
+                  <div class="project-tech-tags">
+                    <span class="tech-pill">TypeScript</span>
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">Zero-Knowledge Hashes</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                  </div>
+
+                  <div class="project-actions-row">
+                    <a href="#modal-wellness" class="cyber-link-btn">
+                      <span>Inspect Security Model</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="GitHub Code">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
+            </article>
 
-              <div class="project-details-box">
-                <div class="project-meta-top">
-                  <span class="proj-category">Cybersecurity / Healthcare</span>
-                  <span class="proj-year">2026</span>
-                </div>
-                <h3 class="project-heading">Private Wellness Check-In</h3>
-                <p class="project-description">
-                  A cryptographic privacy-first hostel wellness check-in system. Allows collegiate residents to log health indicators and request medical or counselor assistance with mathematically guaranteed anonymity.
-                </p>
-
-                <div class="project-tech-tags">
-                  <span class="tech-pill">TypeScript</span>
-                  <span class="tech-pill">React</span>
-                  <span class="tech-pill">Node.js</span>
-                  <span class="tech-pill">Zero-Knowledge Hashes</span>
-                  <span class="tech-pill">PostgreSQL</span>
+            <!-- 4. CampusFlow (Concept / Robotics & IoT) -->
+            <article class="project-card cyber-card" data-category="robotics" data-project-id="campusflow">
+              <div class="card-inner">
+                <div class="project-preview-box">
+                  <div class="preview-glow"></div>
+                  <div class="project-stage-badge stage-concept">
+                    <span class="stage-dot"></span> CONCEPT · ROBOTICS &amp; IOT
+                  </div>
+                  <div class="preview-mockup-graphic robot-graphic">
+                    <div class="robot-icon">🤖</div>
+                    <div class="mock-graphic-title">CampusFlow Autonomous Rover</div>
+                    <div class="mock-graphic-tag">LiDAR SLAM &amp; Micro-Locker Fleet</div>
+                  </div>
                 </div>
 
-                <div class="project-actions-row">
-                  <button class="cyber-link-btn project-detail-btn" data-project-id="wellness">
-                    <span>Inspect Security Model</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </button>
-                  <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="GitHub Code">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </a>
+                <div class="project-details-box">
+                  <div class="project-meta-top">
+                    <span class="proj-category">Robotics / Autonomous IoT</span>
+                    <span class="proj-year">2026</span>
+                  </div>
+                  <h3 class="project-heading">CampusFlow – Delivery Robot Concept</h3>
+                  <p class="project-description">
+                    Autonomous ground robot architecture designed for pedestrian campus walkways. Integrates ROS 2 navigation, LiDAR obstacle avoidance, and dual OTP-secured locker payloads for automated parcel delivery.
+                  </p>
+
+                  <div class="project-tech-tags">
+                    <span class="tech-pill">ROS 2</span>
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Gazebo / RViz</span>
+                    <span class="tech-pill">OpenCV</span>
+                    <span class="tech-pill">IoT Hardware</span>
+                  </div>
+
+                  <div class="project-actions-row">
+                    <a href="#modal-campusflow" class="cyber-link-btn">
+                      <span>View Specifications</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="Robotics Concepts">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-
-          <!-- 4. CampusFlow (Concept / Robotics & IoT) -->
-          <article class="project-card cyber-card" data-category="robotics" data-project-id="campusflow">
-            <div class="card-inner">
-              <div class="project-preview-box">
-                <div class="preview-glow"></div>
-                <div class="project-stage-badge stage-concept">
-                  <span class="stage-dot"></span> CONCEPT · ROBOTICS &amp; IOT
-                </div>
-                <div class="preview-mockup-graphic robot-graphic">
-                  <div class="robot-icon">🤖</div>
-                  <div class="mock-graphic-title">CampusFlow Autonomous Rover</div>
-                  <div class="mock-graphic-tag">LiDAR SLAM &amp; Micro-Locker Fleet</div>
-                </div>
-              </div>
-
-              <div class="project-details-box">
-                <div class="project-meta-top">
-                  <span class="proj-category">Robotics / Autonomous IoT</span>
-                  <span class="proj-year">2026</span>
-                </div>
-                <h3 class="project-heading">CampusFlow – Delivery Robot Concept</h3>
-                <p class="project-description">
-                  Autonomous ground robot architecture designed for pedestrian campus walkways. Integrates ROS 2 navigation, LiDAR obstacle avoidance, and dual OTP-secured locker payloads for automated parcel delivery.
-                </p>
-
-                <div class="project-tech-tags">
-                  <span class="tech-pill">ROS 2</span>
-                  <span class="tech-pill">Python</span>
-                  <span class="tech-pill">Gazebo / RViz</span>
-                  <span class="tech-pill">OpenCV</span>
-                  <span class="tech-pill">IoT Hardware</span>
-                </div>
-
-                <div class="project-actions-row">
-                  <button class="cyber-link-btn project-detail-btn" data-project-id="campusflow">
-                    <span>View Specifications</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </button>
-                  <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-icon-link" title="Robotics Concepts">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+            </article>
+          </div>
+        </div>
           </article>
         </div>
       </div>
@@ -871,30 +910,60 @@
               </div>
             </div>
 
-            <!-- Interactive AI Experiment Trigger -->
-            <div class="ai-demo-box">
+            <!-- Pure CSS Interactive AI Experiment Simulator -->
+            <div class="ai-demo-box pure-css-demo">
+              <input type="radio" name="sim-prompt" id="sim-opt-1" class="sim-radio" checked />
+              <input type="radio" name="sim-prompt" id="sim-opt-2" class="sim-radio" />
+              <input type="radio" name="sim-prompt" id="sim-opt-3" class="sim-radio" />
+
               <div class="demo-box-top">
                 <span class="demo-tag">AI INFERENCE SIMULATOR</span>
-                <span class="demo-model">Model: Siddharth-Cognitive-v2.8</span>
+                <span class="demo-model">Model: Siddharth-Cognitive-v2.8 · Pure CSS Stream</span>
               </div>
+
               <div class="demo-box-body">
-                <div class="demo-prompt-preview">
-                  <strong>Query:</strong> <span id="ai-demo-query">"How does GoDuet optimize courier delivery routes?"</span>
+                <!-- Stream 1: GoDuet Logistics -->
+                <div class="sim-output-block sim-block-1">
+                  <div class="demo-prompt-preview">
+                    <strong>Query:</strong> "How does GoDuet optimize courier delivery routes?"
+                  </div>
+                  <div class="demo-response-stream">
+                    GoDuet executes spatial K-means clustering on open cart geolocations within 300-second time windows. Orders destined for the same dormitory quad are batched into a single micro-courier route, slashing per-drop transit overhead by up to <strong>68%</strong>. <span class="typing-cursor"></span>
+                  </div>
                 </div>
-                <div class="demo-response-stream" id="ai-demo-stream">
-                  GoDuet executes spatial K-means clustering on open cart geolocations within 300-second time windows. Orders destined for the same dormitory quad are batched into a single micro-courier route, slashing per-drop transit overhead by up to 68%.
+
+                <!-- Stream 2: VOICEPRINT Speech -->
+                <div class="sim-output-block sim-block-2">
+                  <div class="demo-prompt-preview">
+                    <strong>Query:</strong> "What enables VOICEPRINT to achieve sub-300ms speech synthesis?"
+                  </div>
+                  <div class="demo-response-stream">
+                    VOICEPRINT utilizes non-autoregressive acoustic mel-spectrogram predictors combined with HiFi-GAN vocoding, chunked over WebSockets to begin audio playback before text generation finishes. <span class="typing-cursor"></span>
+                  </div>
+                </div>
+
+                <!-- Stream 3: Zero-Knowledge Privacy -->
+                <div class="sim-output-block sim-block-3">
+                  <div class="demo-prompt-preview">
+                    <strong>Query:</strong> "How is student identity protected in Private Wellness Check-In?"
+                  </div>
+                  <div class="demo-response-stream">
+                    Patient identities are hashed locally using salted blind signatures prior to state persistence. Even system administrators can never cross-correlate student roll numbers with medical feedback entries. <span class="typing-cursor"></span>
+                  </div>
                 </div>
               </div>
+
+              <!-- Interactive Prompt Selectors -->
               <div class="demo-prompts-row">
-                <button class="ai-sample-prompt active" data-query="How does GoDuet optimize courier delivery routes?" data-response="GoDuet executes spatial K-means clustering on open cart geolocations within 300-second time windows. Orders destined for the same dormitory quad are batched into a single micro-courier route, slashing per-drop transit overhead by up to 68%.">
-                  Logistics Batching
-                </button>
-                <button class="ai-sample-prompt" data-query="What enables VOICEPRINT to achieve sub-300ms speech synthesis?" data-response="VOICEPRINT utilizes non-autoregressive acoustic mel-spectrogram predictors combined with HiFi-GAN vocoding, chunked over WebSockets to begin audio playback before text generation finishes.">
-                  VOICEPRINT Speech Latency
-                </button>
-                <button class="ai-sample-prompt" data-query="How is student identity protected in Private Wellness Check-In?" data-response="Patient identities are hashed locally using salted blind signatures prior to state persistence. Even system administrators can never cross-correlate student roll numbers with medical feedback entries.">
-                  Zero-Knowledge Privacy
-                </button>
+                <label for="sim-opt-1" class="ai-sample-prompt">
+                  <span>Logistics Batching</span>
+                </label>
+                <label for="sim-opt-2" class="ai-sample-prompt">
+                  <span>VOICEPRINT Speech Latency</span>
+                </label>
+                <label for="sim-opt-3" class="ai-sample-prompt">
+                  <span>Zero-Knowledge Privacy</span>
+                </label>
               </div>
             </div>
           </div>
@@ -1546,22 +1615,19 @@
         <div class="contact-grid">
           <!-- Left: Direct Info Cards -->
           <div class="contact-cards-col">
-            <!-- Email Card with 1-Click Copy -->
-            <div class="cyber-card contact-method-card">
+            <!-- Email Direct Link Card -->
+            <a href="mailto:siddharth@example.com" class="cyber-card contact-method-card clickable-email" title="Click to send email directly to Siddharth">
               <div class="card-inner">
                 <div class="cm-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                 </div>
                 <div class="cm-content">
                   <span class="cm-label">Direct Email</span>
-                  <span class="cm-value" id="email-text">siddharth@example.com</span>
+                  <span class="cm-value">siddharth@example.com</span>
                 </div>
-                <button class="copy-email-btn" id="copy-email-btn" title="Copy email address" aria-label="Copy email">
-                  <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span class="copy-tooltip">Copied!</span>
-                </button>
+                <span class="cyber-chip-link">Send Email ↗</span>
               </div>
-            </div>
+            </a>
 
             <!-- Social Links Card -->
             <div class="cyber-card contact-method-card">
@@ -1594,42 +1660,35 @@
             </div>
           </div>
 
-          <!-- Right: Interactive Cyber Contact Form -->
+          <!-- Right: Pure HTML5 Cyber Contact Form -->
           <div class="cyber-card contact-form-card">
             <div class="card-inner">
-              <form id="contact-form" class="contact-form" novalidate>
+              <form action="mailto:siddharth@example.com" method="POST" enctype="text/plain" class="contact-form">
                 <div class="form-row">
                   <div class="form-group">
                     <label for="contact-name">Your Name <span class="required">*</span></label>
                     <input type="text" id="contact-name" name="name" placeholder="Elon Musk" required />
-                    <span class="form-error-msg" id="name-error">Please provide your name</span>
                   </div>
                   <div class="form-group">
                     <label for="contact-email">Email Address <span class="required">*</span></label>
                     <input type="email" id="contact-email" name="email" placeholder="elon@x.com" required />
-                    <span class="form-error-msg" id="email-error">Please provide a valid email</span>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="contact-subject">Inquiry Type / Subject <span class="required">*</span></label>
                   <input type="text" id="contact-subject" name="subject" placeholder="GoDuet Partnership / Venture Discussion / Tech Role" required />
-                  <span class="form-error-msg" id="subject-error">Please indicate your subject</span>
                 </div>
 
                 <div class="form-group">
                   <label for="contact-message">Message <span class="required">*</span></label>
-                  <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your vision, opportunity, or what you'd like to collaborate on..." required></textarea>
-                  <span class="form-error-msg" id="message-error">Message must be at least 10 characters</span>
+                  <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your vision, opportunity, or what you'd like to collaborate on..." minlength="10" required></textarea>
                 </div>
 
-                <button type="submit" id="submit-contact-btn" class="cyber-btn cyber-btn-primary full-width">
+                <button type="submit" class="cyber-btn cyber-btn-primary full-width">
                   <span class="btn-text">Transmit Message</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                 </button>
-
-                <!-- Feedback Toast -->
-                <div id="contact-form-feedback" class="form-feedback-banner" role="alert" aria-live="polite"></div>
               </form>
             </div>
           </div>
@@ -1670,32 +1729,28 @@
       <div class="footer-right">
         <p class="copyright-text">&copy; <span id="current-year">2026</span> Siddharth Singh. All rights reserved.</p>
         <div class="footer-sub-links">
-          <span>Designed &amp; Engineered with HTML &amp; CSS</span>
+          <span>Crafted with 100% Pure HTML &amp; CSS · Zero JavaScript</span>
         </div>
-        <button id="back-to-top" class="back-to-top-btn" title="Back to top" aria-label="Back to top">
+        <a href="#hero" class="back-to-top-btn" title="Back to top" aria-label="Back to top">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-        </button>
+        </a>
       </div>
     </div>
   </footer>
 
   <!-- =========================================================================
-       11. RESUME MODAL & VIEWER (Interactive Executive Preview)
+       11. RESUME MODAL & VIEWER (Pure CSS :target Modal)
        ========================================================================= -->
   <div id="resume-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
-    <div class="modal-backdrop" id="resume-modal-backdrop"></div>
+    <a href="#close" class="modal-backdrop" aria-label="Close modal"></a>
     <div class="modal-window resume-modal-window">
       <div class="modal-header">
         <div class="modal-header-info">
-          <span class="modal-chip">EXECUTIVE RESUME</span>
+          <span class="modal-chip">EXECUTIVE CV · PRESS CTRL+P / CMD+P TO PRINT</span>
           <h3 id="resume-modal-title" class="modal-title">Siddharth Singh — Curriculum Vitae</h3>
         </div>
         <div class="modal-header-actions">
-          <button id="resume-download-btn" class="cyber-btn cyber-btn-primary cyber-btn-xs">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span>Download PDF</span>
-          </button>
-          <button id="resume-modal-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+          <a href="#close" class="modal-close-btn" aria-label="Close modal">✕</a>
         </div>
       </div>
 
@@ -1794,36 +1849,191 @@
   </div>
 
   <!-- =========================================================================
-       PROJECT DETAILS DEEP-DIVE MODAL
+       PROJECT 1 MODAL: GODUET CASE STUDY (Pure CSS :target)
        ========================================================================= -->
-  <div id="project-modal" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
-    <div class="modal-backdrop" id="project-modal-backdrop"></div>
-    <div class="modal-window project-modal-window">
+  <div id="modal-goduet" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="goduet-modal-title">
+    <a href="#close" class="modal-backdrop" aria-label="Close modal"></a>
+    <div class="modal-window">
       <div class="modal-header">
         <div class="modal-header-info">
-          <span id="project-modal-badge" class="modal-chip">PROJECT DEEP DIVE</span>
-          <h3 id="project-modal-title" class="modal-title">Project Overview</h3>
+          <span class="modal-chip">STARTUP · ACTIVE PRODUCTION</span>
+          <h3 id="goduet-modal-title" class="modal-title">GoDuet — Hyper-Local Campus Logistics</h3>
         </div>
-        <button id="project-modal-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+        <a href="#close" class="modal-close-btn" aria-label="Close modal">✕</a>
       </div>
-      <div class="modal-body" id="project-modal-body">
-        <!-- Dynamically injected via script.js -->
+      <div class="modal-body">
+        <div class="case-study-content">
+          <div class="cs-lead">
+            <strong>GoDuet</strong> is a hyper-local campus food delivery platform designed to resolve the notorious "last 500 meters" problem for university students, late-night dormitory cravings, and campus cafeterias.
+          </div>
+
+          <h4 class="cs-heading">1. Spatial K-Means Batching Engine</h4>
+          <p class="cs-text">
+            Traditional aggregators treat every dormitory order as an isolated journey. GoDuet aggregates active student carts within 300-second rolling time windows and clusters deliveries going to identical hostel quads. A single student peer-courier fulfills up to 5 orders simultaneously, slashing per-delivery transit overhead by 68%.
+          </p>
+
+          <h4 class="cs-heading">2. Peer-to-Peer Verified Courier Economy</h4>
+          <p class="cs-text">
+            Verified student couriers walking back from classes or campus cafes claim batched delivery routes heading directly toward their own dormitory quads. This model eliminates delivery vehicle emissions on campus walkways and creates flexible on-campus student earning opportunities.
+          </p>
+
+          <h4 class="cs-heading">3. Architecture &amp; Real-Time Telemetry</h4>
+          <ul class="cs-list">
+            <li><strong>Frontend:</strong> Next.js 14 App Router, TypeScript, Tailwind CSS, Service Workers.</li>
+            <li><strong>Backend:</strong> Node.js, WebSocket event streams, Redis Pub/Sub for real-time courier telemetry.</li>
+            <li><strong>Database:</strong> PostgreSQL with PostGIS extensions for spatial quad polygon lookups.</li>
+          </ul>
+
+          <div class="cs-actions">
+            <a href="#contact" class="cyber-btn cyber-btn-primary cyber-btn-sm">Contact Founder About GoDuet</a>
+            <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-outline cyber-btn-sm">View GitHub Profile ↗</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- =========================================================================
-       AI PORTFOLIO ASSISTANT: "ASK SIDDHARTH"
+       PROJECT 2 MODAL: VOICEPRINT CASE STUDY (Pure CSS :target)
        ========================================================================= -->
-  <!-- Floating Trigger Button -->
-  <button id="ai-assistant-toggle" class="floating-ai-trigger" aria-label="Open Ask Siddharth AI Chatbot" title="Ask Siddharth AI">
+  <div id="modal-voiceprint" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="voiceprint-modal-title">
+    <a href="#close" class="modal-backdrop" aria-label="Close modal"></a>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-chip">AI SYSTEM · PRODUCTION PROTOTYPE</span>
+          <h3 id="voiceprint-modal-title" class="modal-title">VOICEPRINT — Low-Latency Voice AI</h3>
+        </div>
+        <a href="#close" class="modal-close-btn" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-body">
+        <div class="case-study-content">
+          <div class="cs-lead">
+            <strong>VOICEPRINT</strong> is an end-to-end conversational voice intelligence assistant combining acoustic speaker biometric verification with sub-300ms speech synthesis.
+          </div>
+
+          <h4 class="cs-heading">1. Sub-300ms Latency Pipeline</h4>
+          <p class="cs-text">
+            Traditional voice assistants experience 1.5–3.0s latency delays. VOICEPRINT streams raw audio chunks via WebSockets directly into fine-tuned Whisper STT models, while an asynchronous non-autoregressive acoustic vocoder begins synthesized audio playback before text generation finishes.
+          </p>
+
+          <h4 class="cs-heading">2. Speaker Biometric Verification</h4>
+          <p class="cs-text">
+            Protects private personal requests using 192-dimensional d-vector acoustic embeddings extracted directly from the user's vocal tract characteristics. Prevents unauthorized ambient voices or background noise from triggering personal assistant workflows.
+          </p>
+
+          <h4 class="cs-heading">3. Tech Stack</h4>
+          <ul class="cs-list">
+            <li>Python, PyTorch, Whisper STT, FastAPI, WebSockets, HiFi-GAN Vocoder, LangChain, ChromaDB.</li>
+          </ul>
+
+          <div class="cs-actions">
+            <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-primary cyber-btn-sm">View on GitHub ↗</a>
+            <a href="#ai-tech" class="cyber-btn cyber-btn-outline cyber-btn-sm">Explore AI Lab</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PROJECT 3 MODAL: PRIVATE WELLNESS CHECK-IN CASE STUDY (Pure CSS :target)
+       ========================================================================= -->
+  <div id="modal-wellness" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="wellness-modal-title">
+    <a href="#close" class="modal-backdrop" aria-label="Close modal"></a>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-chip">CYBERSECURITY · PRODUCTION READY</span>
+          <h3 id="wellness-modal-title" class="modal-title">Private Wellness Check-In — Cryptographic Health</h3>
+        </div>
+        <a href="#close" class="modal-close-btn" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-body">
+        <div class="case-study-content">
+          <div class="cs-lead">
+            <strong>Private Wellness Check-In</strong> is a zero-knowledge mental health platform engineered for university dormitories, ensuring students can request counseling or medical help with mathematically guaranteed anonymity.
+          </div>
+
+          <h4 class="cs-heading">1. Zero-Knowledge Blind Signature Architecture</h4>
+          <p class="cs-text">
+            Student roll numbers and identifying metadata are salted and hashed client-side using the Web Crypto API prior to transmission. Even database administrators and campus authorities cannot reverse-engineer student identities from wellness logs.
+          </p>
+
+          <h4 class="cs-heading">2. Confidential Escalation Protocol</h4>
+          <p class="cs-text">
+            When high-risk sentiment triggers are detected, the system generates an anonymous single-use cryptographic token allowing students to interface directly with licensed counselors via encrypted end-to-end messaging channels.
+          </p>
+
+          <h4 class="cs-heading">3. Tech Stack</h4>
+          <ul class="cs-list">
+            <li>TypeScript, React, Node.js, Web Crypto API, PostgreSQL, Docker, End-to-End Encryption.</li>
+          </ul>
+
+          <div class="cs-actions">
+            <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-primary cyber-btn-sm">Inspect Repository ↗</a>
+            <a href="#contact" class="cyber-btn cyber-btn-outline cyber-btn-sm">Discuss Security Architecture</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PROJECT 4 MODAL: CAMPUSFLOW CASE STUDY (Pure CSS :target)
+       ========================================================================= -->
+  <div id="modal-campusflow" class="cyber-modal" role="dialog" aria-modal="true" aria-labelledby="campusflow-modal-title">
+    <a href="#close" class="modal-backdrop" aria-label="Close modal"></a>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-chip">ROBOTICS &amp; IOT · CONCEPT DESIGN</span>
+          <h3 id="campusflow-modal-title" class="modal-title">CampusFlow — Autonomous Rover Concept</h3>
+        </div>
+        <a href="#close" class="modal-close-btn" aria-label="Close modal">✕</a>
+      </div>
+      <div class="modal-body">
+        <div class="case-study-content">
+          <div class="cs-lead">
+            <strong>CampusFlow</strong> is an autonomous ground rover concept designed to navigate university pedestrian walkways, delivering packages and meals directly between campus facilities.
+          </div>
+
+          <h4 class="cs-heading">1. Perception &amp; Navigation Stack</h4>
+          <p class="cs-text">
+            Powered by ROS 2 (Robot Operating System) with 2D LiDAR SLAM (Cartographer) and stereo depth cameras for dynamic obstacle avoidance in dense pedestrian campus environments.
+          </p>
+
+          <h4 class="cs-heading">2. Modular Dual OTP Payload Pod</h4>
+          <p class="cs-text">
+            Dual-compartment electronically actuated locker pod with thermal insulation. Students receive a one-time 4-digit code on their phones to authenticate and unlock their specific payload upon rover arrival.
+          </p>
+
+          <h4 class="cs-heading">3. Simulation Stack</h4>
+          <ul class="cs-list">
+            <li>ROS 2, Python, C++, Gazebo Simulation, RViz, OpenCV, Microcontroller Telemetry.</li>
+          </ul>
+
+          <div class="cs-actions">
+            <a href="https://github.com/siddhu31230-dot" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-primary cyber-btn-sm">View Robotics Research ↗</a>
+            <a href="#projects" class="cyber-btn cyber-btn-outline cyber-btn-sm">All Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       AI PORTFOLIO ASSISTANT: "ASK SIDDHARTH" (Pure HTML & CSS Conversational Bot)
+       ========================================================================= -->
+  <!-- Floating Trigger Label -->
+  <label for="ai-chat-toggle" class="floating-ai-trigger" aria-label="Open Ask Siddharth AI Chatbot" title="Ask Siddharth AI">
     <span class="ai-trigger-sparkle">✦</span>
     <span class="ai-trigger-text">Ask Siddharth</span>
     <span class="ai-online-beacon"></span>
-  </button>
+  </label>
 
-  <!-- AI Chat Widget Window -->
-  <div id="ai-chat-widget" class="ai-chat-window" role="dialog" aria-labelledby="ai-chat-title" aria-hidden="true">
+  <!-- AI Chat Widget Window (Pure CSS) -->
+  <div class="ai-chat-window" role="dialog" aria-labelledby="ai-chat-title" aria-modal="false">
     <div class="ai-chat-header">
       <div class="ai-bot-avatar">
         <span>SS</span>
@@ -1831,39 +2041,138 @@
       </div>
       <div class="ai-bot-meta">
         <h4 id="ai-chat-title" class="ai-bot-name">Ask Siddharth AI</h4>
-        <span class="ai-bot-desc">Trained on Siddharth's Ventures &amp; Engineering</span>
+        <span class="ai-bot-desc">Trained on Ventures &amp; Engineering · Pure CSS</span>
       </div>
-      <button id="ai-chat-close" class="ai-close-btn" aria-label="Close AI chat">✕</button>
+      <label for="ai-chat-toggle" class="ai-close-btn" aria-label="Close AI chat">✕</label>
     </div>
 
-    <!-- Chat Messages Stream -->
-    <div class="ai-chat-messages" id="ai-chat-messages">
-      <div class="chat-message bot-msg">
-        <div class="msg-bubble">
-          Hey there! 👋 I am <strong>Siddharth's AI Assistant</strong>. Ask me anything about his startup <strong>GoDuet</strong>, his AI experiments (VOICEPRINT), his tech stack, or how to collaborate with him!
+    <!-- Pure CSS Interactive Dialogue Container -->
+    <div class="ai-interactive-box">
+      <!-- Radio Tabs for Questions -->
+      <input type="radio" name="ai-tab" id="ai-opt-default" class="ai-radio-tab" checked />
+      <input type="radio" name="ai-tab" id="ai-opt-goduet" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-newton" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-voiceprint" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-wellness" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-stack" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-hackathons" class="ai-radio-tab" />
+      <input type="radio" name="ai-tab" id="ai-opt-contact" class="ai-radio-tab" />
+
+      <!-- Chat Messages Scroll Area -->
+      <div class="ai-chat-messages">
+        <!-- 1. Default Welcome -->
+        <div class="ai-dialog-exchange exchange-default">
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              Hey there! 👋 I am <strong>Siddharth's AI Portfolio Assistant</strong>. Tap any quick prompt below to instantly explore details about his venture <strong>GoDuet</strong>, his studies at <strong>Newton School of Technology</strong>, his AI architectures, or how to collaborate!
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. GoDuet Exchange -->
+        <div class="ai-dialog-exchange exchange-goduet">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">Tell me about GoDuet! 🚀</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              <strong>GoDuet</strong> is Siddharth's campus food delivery startup! It solves the 'last 500 meters' problem by batching orders going to identical hostel blocks and utilizing verified peer couriers. It saves students up to <strong>80%</strong> on delivery fees!
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Newton School of Technology Exchange -->
+        <div class="ai-dialog-exchange exchange-newton">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">Where does Siddharth study? 🎓</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              Siddharth is currently a <strong>01st semester</strong> B.Tech Computer Science &amp; Engineering student at <strong>Newton School of Technology</strong> (started in 2026). He combines academic CS rigor with hands-on venture execution at GoDuet.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. VOICEPRINT Exchange -->
+        <div class="ai-dialog-exchange exchange-voiceprint">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">Tell me about VOICEPRINT 🗣️</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              <strong>VOICEPRINT</strong> is Siddharth's low-latency neural voice assistant. It achieves <strong>sub-300ms</strong> speech synthesis by combining streaming Whisper STT, non-autoregressive vocoders, and acoustic speaker biometric verification to safeguard user queries.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Private Wellness Exchange -->
+        <div class="ai-dialog-exchange exchange-wellness">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">What is Private Wellness Check-In? 🛡️</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              <strong>Private Wellness Check-In</strong> is a cryptographic mental health platform for university hostels. It uses zero-knowledge salted blind signatures so students can request assistance without ever exposing their identity to hostel authorities.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Tech Stack Exchange -->
+        <div class="ai-dialog-exchange exchange-stack">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">What is Siddharth's tech stack? 💻</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              Siddharth specializes in <strong>Python, TypeScript, React, Next.js 14, Node.js, FastAPI, PyTorch, LangChain, PostgreSQL, Redis, and ROS 2</strong>, combined with hands-on 0-to-1 product strategy.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Hackathons Exchange -->
+        <div class="ai-dialog-exchange exchange-hackathons">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">Tell me about his hackathon experience ⚡</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              Siddharth is an active <strong>hackathon participant and sprint builder</strong>, rapidly engineering and shipping functional web applications and prototypes under high-pressure 24–48hr constraints. He is also currently undergoing foundational training in Deep Learning &amp; AI Systems.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Contact Exchange -->
+        <div class="ai-dialog-exchange exchange-contact">
+          <div class="chat-message user-msg">
+            <div class="msg-bubble">How do I contact Siddharth? 📬</div>
+          </div>
+          <div class="chat-message bot-msg">
+            <div class="msg-bubble">
+              You can email Siddharth directly at <strong>siddharth@example.com</strong>, check out his code at <strong>github.com/siddhu31230-dot</strong>, or send a note via the Contact section below!
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Quick Question Suggestion Chips -->
-    <div class="ai-quick-prompts">
-      <button class="ai-quick-chip" data-prompt="Tell me about GoDuet">Tell me about GoDuet</button>
-      <button class="ai-quick-chip" data-prompt="What is Siddharth's tech stack?">What's his tech stack?</button>
-      <button class="ai-quick-chip" data-prompt="Tell me about VOICEPRINT">Tell me about VOICEPRINT</button>
-      <button class="ai-quick-chip" data-prompt="Is Siddharth open to work or investment?">Open to work/investment?</button>
-      <button class="ai-quick-chip" data-prompt="How do I contact Siddharth?">How do I contact him?</button>
-    </div>
+      <!-- Quick Question Selector Chips -->
+      <div class="ai-quick-prompts">
+        <label for="ai-opt-goduet" class="ai-quick-chip">🚀 GoDuet Startup</label>
+        <label for="ai-opt-newton" class="ai-quick-chip">🎓 Newton School of Tech</label>
+        <label for="ai-opt-voiceprint" class="ai-quick-chip">🗣️ VOICEPRINT AI</label>
+        <label for="ai-opt-wellness" class="ai-quick-chip">🛡️ Private Wellness</label>
+        <label for="ai-opt-stack" class="ai-quick-chip">💻 Tech Stack</label>
+        <label for="ai-opt-hackathons" class="ai-quick-chip">⚡ Hackathons</label>
+        <label for="ai-opt-contact" class="ai-quick-chip">📬 Contact Siddharth</label>
+      </div>
 
-    <!-- Input Box -->
-    <form id="ai-chat-form" class="ai-chat-input-row">
-      <input type="text" id="ai-chat-input" placeholder="Ask a question..." autocomplete="off" required />
-      <button type="submit" id="ai-chat-send" class="ai-send-btn" aria-label="Send message">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-      </button>
-    </form>
+      <!-- Pure HTML Search / Inquire Bar -->
+      <div class="ai-chat-input-row">
+        <input type="text" placeholder="Select any prompt above for instant answers..." readonly />
+        <span class="ai-send-btn" title="Pure HTML/CSS Engine">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </span>
+      </div>
+    </div>
   </div>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
 </body>
 </html>
