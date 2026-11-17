@@ -25,6 +25,50 @@ A modern, high-performance static single-page portfolio website crafted using se
 
 ---
 
+## 🌐 Making It Available for Everyone (Public Deployment)
+
+### 1. GitHub Pages (Free Worldwide Hosting)
+Your local repository is already initialized on the `main` branch. To publish it live under `https://siddhu31230-dot.github.io/portfolio/`:
+
+1. Create a public repository on your GitHub account:
+   ```bash
+   gh repo create portfolio --public --source=. --remote=origin --push
+   ```
+2. Enable GitHub Pages on the `main` branch:
+   ```bash
+   gh api -X POST repos/siddhu31230-dot/portfolio/pages -f source='{"branch":"main","path":"/"}'
+   ```
+3. Your site will be live worldwide at:
+   `https://siddhu31230-dot.github.io/portfolio/`
+
+---
+
+### 2. Netlify Drop (Instant 10-Second Drag & Drop)
+If you prefer not to use the command line:
+1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
+2. Drag and drop this folder (`S&AI`) into the upload area.
+3. You will receive an instant, free `https://your-site.netlify.app` public link available worldwide.
+
+---
+
+### 3. Local Network Access (Phones, Tablets & Wi-Fi Devices)
+The portfolio is currently live on your local network:
+- **On this computer**: [http://localhost:8085](http://localhost:8085)
+- **On your phone / other devices on the same Wi-Fi**: `http://172.16.1.89:8085`
+
+---
+
+## ♿ Universal Accessibility (Available for All Users)
+
+The website has been built following WCAG 2.1 accessibility guidelines:
+- **Keyboard Navigation**: Full `:focus-visible` outline rings for keyboard-only visitors.
+- **Skip to Content**: Hidden jump link at the top of the DOM for screen readers and tab navigation.
+- **Reduced Motion**: Respects `@media (prefers-reduced-motion: reduce)` for users with vestibular or motion sensitivities.
+- **Contrast Adaptation**: Meets WCAG AA text contrast thresholds with `@media (prefers-contrast: more)` support.
+- **Screen Reader Support**: Semantic HTML5 elements (`<header>`, `<main>`, `<nav>`, `<article>`, `<footer>`) with explicit `aria-label` and `aria-expanded` attributes.
+
+---
+
 ## 🚀 Quick Start / How to Run
 
 ### Method 1: Open Directly in Browser
