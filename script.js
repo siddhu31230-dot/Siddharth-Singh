@@ -893,6 +893,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --------------------------------------------------------------------------
+  // 15. Smooth In-Page Topic Jump & Visual Pulse
+  // --------------------------------------------------------------------------
+  const topicLinks = document.querySelectorAll('.identity-chip, .clickable-stat, .clickable-pillar, .about-pill');
+  topicLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          e.preventDefault();
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+          targetSection.classList.remove('section-highlight-pulse');
+          void targetSection.offsetWidth; // Trigger reflow
+          targetSection.classList.add('section-highlight-pulse');
+          setTimeout(() => {
+            targetSection.classList.remove('section-highlight-pulse');
+          }, 2000);
+        }
+      }
+    });
+  });
+
   // Keyboard accessibility for ESC key to close open modals
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
